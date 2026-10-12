@@ -1,77 +1,15 @@
 {
-  "app": {
-    "title": "Plataforma de Gestión de Centros Deportivos UrbanFit"
-  },
-  "navigation": {
-    "toggle-menu": "Mostrar u ocultar el menú de navegación",
-    "language": "Seleccionar idioma",
-    "main": "Navegación principal",
-    "menu": "Espacio de trabajo",
-    "home": "Inicio",
-    "new-reservation": "Nueva reserva",
-    "sidebar-note": "Muévete mejor. Siéntete más fuerte. Sigue avanzando."
-  },
   "home": {
-    "eyebrow": "Tu resumen de actividad",
     "title": "Inicio",
     "description": "Reservas inteligentes y gestión de capacidad para centros deportivos.",
     "my-centers": "Mis centros deportivos",
-    "centers-description": "Consulta las reservas y la capacidad disponible en tiempo real.",
-    "centers": "centros",
-    "empty": "Vacío",
-    "people": "personas",
-    "total-participants": "Participantes totales",
-    "available-capacity": "Capacidad disponible",
-    "loading": "Cargando centros deportivos...",
-    "load-error": "No se pudieron cargar los centros deportivos. Verifica que la API esté activa.",
-    "no-centers": "No hay centros deportivos disponibles.",
-    "new-reservation": "Nueva reserva"
-  },
-  "activity": {
-    "fitness": "Fitness",
-    "yoga": "Yoga",
-    "swimming": "Natación",
-    "cycling": "Ciclismo"
+    "centers-description": "Consulta las reservas y la capacidad disponible en tiempo real."
   },
   "reservation": {
-    "eyebrow": "Crece tu comunidad",
     "title": "Nueva reserva",
-    "subtitle": "Registra participantes en tu centro deportivo",
-    "form-title": "Detalles de la reserva",
-    "form-description": "Elige una actividad e indica quiénes participarán.",
-    "activity": "Tipo de actividad",
-    "center-capacity": "participantes como máximo",
-    "weather": "Temperatura local actual",
-    "weather-loading": "Consultando las condiciones actuales...",
-    "weather-pending": "Selecciona una actividad para consultar el clima local.",
-    "current-temperature": "Clima en vivo de Open-Meteo",
-    "weather-error": "No se pudo consultar la temperatura actual. Intenta seleccionar la actividad nuevamente.",
-    "weather-required": "Se requiere una lectura meteorológica válida para crear la reserva.",
-    "center-not-found": "No hay un centro deportivo configurado para esta actividad.",
-    "participant-name": "Nombre del participante",
-    "participants": "Cantidad de participantes",
-    "saving": "Guardando reserva...",
-    "capacity-note": "Las reservas cuentan para la capacidad total del centro, sin importar la fecha ni la hora.",
-    "capacity-exceeded": "El grupo solicitado ya no cabe. Se volvió a comprobar la capacidad; actualiza la cantidad de participantes.",
-    "create-error": "No se pudo guardar la reserva. Verifica tu conexión e inténtalo de nuevo."
-  },
-  "validation": {
-    "activity-required": "Selecciona un tipo de actividad.",
-    "name-required": "Ingresa el nombre del participante.",
-    "name-whitespace": "El nombre no puede contener solo espacios.",
-    "participants-required": "Ingresa la cantidad de participantes.",
-    "participants-min": "Ingresa un número entero mayor que cero.",
-    "participants-max": "El grupo supera la capacidad disponible."
-  },
-  "common": {
-    "create": "Crear",
-    "cancel": "Cancelar",
-    "retry": "Reintentar"
+    "subtitle": "Registra participantes en tu centro deportivo"
   },
   "not-found": {
-    "eyebrow": "Página no encontrada",
-    "title": "Esta página no está en el mapa.",
-    "description": "No encontramos la ruta",
-    "back-home": "Volver al inicio"
+    "title": "Esta página no está disponible."
   }
 }

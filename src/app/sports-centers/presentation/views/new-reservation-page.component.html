@@ -1,54 +1,47 @@
 <div class="form-page">
   <div class="page-heading">
     <div>
-      <div class="eyebrow">{{ 'reservation.eyebrow' | translate }}</div>
       <h1>{{ 'reservation.title' | translate }}</h1>
       <p>{{ 'reservation.subtitle' | translate }}</p>
     </div>
   </div>
   <mat-card class="form-card">
     <mat-card-header>
-      <div mat-card-avatar class="form-avatar"><mat-icon>how_to_reg</mat-icon></div>
-      <mat-card-title>{{ 'reservation.form-title' | translate }}</mat-card-title>
-      <mat-card-subtitle>{{ 'reservation.form-description' | translate }}</mat-card-subtitle>
+      <mat-card-title>Reservation details</mat-card-title>
+      <mat-card-subtitle>Choose an activity and tell us who is joining.</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <form [formGroup]="form" (ngSubmit)="createReservation()" novalidate>
         <mat-form-field appearance="outline">
-          <mat-label>{{ 'reservation.activity' | translate }}</mat-label>
+          <mat-label>Activity type</mat-label>
           <mat-select formControlName="activityType" required>
             @for (activity of activities; track activity) {
-              <mat-option [value]="activity">{{ ('activity.' + activity) | translate }}</mat-option>
+              <mat-option [value]="activity">{{ activity }}</mat-option>
             }
           </mat-select>
-          <mat-icon matSuffix>expand_more</mat-icon>
           @if (form.controls.activityType.hasError('required') && form.controls.activityType.touched) {
-            <mat-error>{{ 'validation.activity-required' | translate }}</mat-error>
+            <mat-error>Choose an activity type.</mat-error>
           }
         </mat-form-field>
 
         @if (selectedCenter()) {
           <div class="selected-center" aria-live="polite">
-            <mat-icon>location_on</mat-icon>
             <span>
               <strong>{{ selectedCenter()!.name }}</strong>
-              <small>{{ selectedCenter()!.capacity }} {{ 'reservation.center-capacity' | translate }}</small>
+              <small>{{ selectedCenter()!.capacity }} maximum participants</small>
             </span>
           </div>
           <div class="weather-panel" [class.weather-error]="weatherError()">
-            <span class="weather-symbol">
-              <mat-icon>{{ weatherError() ? 'cloud_off' : 'wb_sunny' }}</mat-icon>
-            </span>
             <span class="weather-copy">
-              <strong>{{ 'reservation.weather' | translate }}</strong>
+              <strong>Current local temperature</strong>
               @if (weatherLoading()) {
-                <small>{{ 'reservation.weather-loading' | translate }}</small>
+                <small>Getting the latest conditions...</small>
               } @else if (weatherTemperature() !== null) {
-                <small>{{ 'reservation.current-temperature' | translate }}</small>
+                <small>Live weather from Open-Meteo</small>
               } @else if (weatherError()) {
-                <small role="alert">{{ weatherError() | translate }}</small>
+                <small role="alert">{{ weatherError() }}</small>
               } @else {
-                <small>{{ 'reservation.weather-pending' | translate }}</small>
+                <small>Select an activity to check the local weather.</small>
               }
             </span>
             @if (weatherTemperature() !== null) {
@@ -58,48 +51,46 @@
         }
 
         <mat-form-field appearance="outline">
-          <mat-label>{{ 'reservation.participant-name' | translate }}</mat-label>
+          <mat-label>Participant name</mat-label>
           <input matInput formControlName="participantName" autocomplete="name" maxlength="100" required>
-          <mat-icon matSuffix>person_outline</mat-icon>
           @if (form.controls.participantName.hasError('required') && form.controls.participantName.touched) {
-            <mat-error>{{ 'validation.name-required' | translate }}</mat-error>
+            <mat-error>Enter the participant name.</mat-error>
           } @else if (form.controls.participantName.hasError('whitespace') && form.controls.participantName.touched) {
-            <mat-error>{{ 'validation.name-whitespace' | translate }}</mat-error>
+            <mat-error>The name cannot contain only spaces.</mat-error>
           }
         </mat-form-field>
 
         <mat-form-field appearance="outline">
-          <mat-label>{{ 'reservation.participants' | translate }}</mat-label>
+          <mat-label>Number of participants</mat-label>
           <input matInput type="number" formControlName="participants" min="1" step="1" required>
-          <mat-icon matSuffix>groups</mat-icon>
           @if (form.controls.participants.hasError('required') && form.controls.participants.touched) {
-            <mat-error>{{ 'validation.participants-required' | translate }}</mat-error>
+            <mat-error>Enter the number of participants.</mat-error>
           } @else if (form.controls.participants.hasError('min') || form.controls.participants.hasError('integer')) {
-            <mat-error>{{ 'validation.participants-min' | translate }}</mat-error>
+            <mat-error>Enter a whole number greater than zero.</mat-error>
           } @else if (form.controls.participants.hasError('max')) {
-            <mat-error>{{ 'validation.participants-max' | translate }}</mat-error>
+            <mat-error>This group exceeds the available capacity.</mat-error>
           }
         </mat-form-field>
         @if (submitError()) {
           <div class="submit-error" role="alert">
-            <mat-icon>error_outline</mat-icon>{{ submitError() | translate }}
+            {{ submitError() }}
           </div>
         }
         <div class="form-actions">
           <button mat-button type="button" class="cancel-button" (click)="cancel()">
-            {{ 'common.cancel' | translate }}
+            Cancel
           </button>
           <button mat-flat-button color="primary" type="submit"
             [disabled]="saving() || weatherLoading() || weatherTemperature() === null">
             @if (saving()) {
-              <span>{{ 'reservation.saving' | translate }}</span>
+              <span>Saving reservation...</span>
             } @else {
-              <span>{{ 'common.create' | translate }}</span>
+              <span>Create</span>
             }
           </button>
         </div>
       </form>
     </mat-card-content>
   </mat-card>
-  <p class="capacity-note"><mat-icon>info</mat-icon>{{ 'reservation.capacity-note' | translate }}</p>
+  <p class="capacity-note">Reservations count toward total center capacity, regardless of date or time.</p>
 </div>

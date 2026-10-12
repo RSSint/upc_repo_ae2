@@ -37,7 +37,7 @@ export class SportsCentersStore {
       this.centers.set(centers);
       this.reservations.set(reservations);
     } catch {
-      this.loadError.set('home.load-error');
+      this.loadError.set("We couldn't load sports center data. Check that the API is running.");
     } finally {
       this.loading.set(false);
     }

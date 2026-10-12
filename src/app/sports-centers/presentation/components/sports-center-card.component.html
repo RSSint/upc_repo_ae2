@@ -1,12 +1,11 @@
 <mat-card class="center-card">
   <mat-card-header>
-    <div mat-card-avatar class="center-avatar"><mat-icon>{{ activityIcon }}</mat-icon></div>
     <mat-card-title>{{ summary.center.name }}</mat-card-title>
-    <mat-card-subtitle>{{ ('activity.' + summary.center.activityType) | translate }}</mat-card-subtitle>
+    <mat-card-subtitle>{{ summary.center.activityType }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     @if (summary.reservations.length === 0) {
-      <div class="empty-state"><mat-icon>event_busy</mat-icon><span>{{ 'home.empty' | translate }}</span></div>
+      <div class="empty-state"><mat-icon>event_busy</mat-icon><span>Empty</span></div>
     } @else {
       <ul class="reservation-list">
         @for (reservation of summary.reservations; track reservation.id) {
@@ -17,7 +16,7 @@
               <small>{{ reservation.reservedAt | date:'mediumDate' }}</small>
             </span>
             <span class="attendee-count">
-              {{ reservation.participants }} <small>{{ 'home.people' | translate }}</small>
+              {{ reservation.participants }} <small>people</small>
             </span>
           </li>
         }
@@ -26,11 +25,11 @@
   </mat-card-content>
   <mat-card-footer class="capacity-footer">
     <div class="metric">
-      <span>{{ 'home.total-participants' | translate }}</span>
+      <span>Total Participants</span>
       <strong>{{ summary.totalParticipants }}</strong>
     </div>
     <div class="metric available" [class.at-capacity]="summary.availableCapacity <= 0">
-      <span>{{ 'home.available-capacity' | translate }}</span>
+      <span>Available Capacity</span>
       <strong>{{ summary.availableCapacity }}</strong>
     </div>
   </mat-card-footer>

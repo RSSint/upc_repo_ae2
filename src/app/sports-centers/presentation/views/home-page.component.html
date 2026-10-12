@@ -1,11 +1,11 @@
 <section class="page-heading">
   <div>
-    <div class="eyebrow"><span class="live-dot"></span>{{ 'home.eyebrow' | translate }}</div>
+    <div class="eyebrow"><span class="live-dot"></span>Your fitness overview</div>
     <h1>{{ 'home.title' | translate }}</h1>
     <p>{{ 'home.description' | translate }}</p>
   </div>
   <a mat-flat-button color="primary" routerLink="/reservations/new">
-    <mat-icon>add</mat-icon>{{ 'home.new-reservation' | translate }}
+    <mat-icon>add</mat-icon>New Reservation
   </a>
 </section>
 <section class="centers-section" aria-labelledby="centers-title">
@@ -14,23 +14,23 @@
       <h2 id="centers-title">{{ 'home.my-centers' | translate }}</h2>
       <p>{{ 'home.centers-description' | translate }}</p>
     </div>
-    <span class="center-count">{{ store.centers().length }} {{ 'home.centers' | translate }}</span>
+    <span class="center-count">{{ store.centers().length }} centers</span>
   </div>
   @if (store.loading()) {
     <div class="status-message" role="status">
-      <mat-icon>sync</mat-icon>{{ 'home.loading' | translate }}
+      <mat-icon>sync</mat-icon>Loading sports centers...
     </div>
   } @else if (store.loadError()) {
     <div class="error-message" role="alert">
-      {{ store.loadError() | translate }}
-      <button mat-button type="button" (click)="store.refresh()">{{ 'common.retry' | translate }}</button>
+      {{ store.loadError() }}
+      <button mat-button type="button" (click)="store.refresh()">Retry</button>
     </div>
   } @else {
     <div class="center-grid">
       @for (summary of store.summaries(); track summary.center.id) {
         <sports-center-card [summary]="summary" />
       } @empty {
-        <p>{{ 'home.no-centers' | translate }}</p>
+        <p>No sports centers are available.</p>
       }
     </div>
   }

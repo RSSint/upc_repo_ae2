@@ -1,6 +1,5 @@
 .center-card { height:100%; border:1px solid #e5e5e5; border-radius:4px; box-shadow:none!important; }
 .center-card mat-card-header { padding:16px; align-items:center; }
-.center-avatar { display:grid; place-items:center; background:#f2f7f4; color:#26734d; }
 .center-card mat-card-title { font-size:16px; font-weight:600; }
 .center-card mat-card-subtitle { margin-top:4px; color:#777; }
 .center-card mat-card-content { padding:0 16px!important; min-height:90px; }

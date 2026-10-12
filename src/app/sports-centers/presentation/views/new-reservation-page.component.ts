@@ -6,7 +6,6 @@ import { TranslatePipe } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { firstValueFrom } from 'rxjs';
@@ -21,7 +20,7 @@ import { WeatherApi } from '../../../weather/infrastructure/api/weather-api.serv
 @Component({
   selector: 'new-reservation-page',
   standalone: true,
-  imports: [ReactiveFormsModule, TranslatePipe, MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule],
+  imports: [ReactiveFormsModule, TranslatePipe, MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatSelectModule],
   templateUrl: './new-reservation-page.component.html',
   styleUrl: './new-reservation-page.component.css',
 })
@@ -73,7 +72,7 @@ export class NewReservationPageComponent implements OnInit {
       center = this.store.findCenter(activity);
     }
     if (!center) {
-      this.weatherError.set('reservation.center-not-found');
+      this.weatherError.set('No sports center is configured for this activity.');
       return;
     }
     this.selectedCenter.set(center);
@@ -88,7 +87,7 @@ export class NewReservationPageComponent implements OnInit {
         },
         error: () => {
           if (requestId !== this.weatherRequestId) return;
-          this.weatherError.set('reservation.weather-error');
+          this.weatherError.set('The current temperature could not be loaded. Try selecting the activity again.');
           this.weatherLoading.set(false);
         },
       });
@@ -102,11 +101,11 @@ export class NewReservationPageComponent implements OnInit {
     const temperature = this.weatherTemperature();
     const activityCenter = activity ? this.store.findCenter(activity) : undefined;
     if (this.form.invalid || !activity || !activityCenter) {
-      if (!activityCenter && activity) this.submitError.set('reservation.center-not-found');
+      if (!activityCenter && activity) this.submitError.set('No sports center is configured for this activity.');
       return;
     }
     if (temperature === null || this.weatherLoading() || this.weatherError()) {
-      this.submitError.set('reservation.weather-required');
+      this.submitError.set('A valid weather reading is required before this reservation can be created.');
       return;
     }
     this.saving.set(true);
@@ -121,7 +120,7 @@ export class NewReservationPageComponent implements OnInit {
       const occupied = reservations.reduce((sum, reservation) => sum + reservation.participants, 0);
       if (!Number.isInteger(participants) || participants <= 0 || participants > center.capacity - occupied) {
         this.form.controls.participants.setErrors({ max: true });
-        this.submitError.set('reservation.capacity-exceeded');
+        this.submitError.set('The requested group no longer fits. Available capacity was checked again; update the participant count.');
         return;
       }
       const request: Omit<Reservation, 'id'> = {
@@ -135,7 +134,7 @@ export class NewReservationPageComponent implements OnInit {
       await firstValueFrom(this.reservationsApi.createReservation(request));
       await this.router.navigate(['/home']);
     } catch {
-      this.submitError.set('reservation.create-error');
+      this.submitError.set('The reservation could not be saved. Check your connection and try again.');
     } finally {
       this.saving.set(false);
     }

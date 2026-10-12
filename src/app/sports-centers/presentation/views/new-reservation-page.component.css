@@ -5,7 +5,6 @@ h1 { margin:0 0 8px; font-size:30px; font-weight:600; }
 .page-heading p { margin:0; color:#666; font-size:14px; }
 .form-card { border:1px solid #e5e5e5; border-radius:4px; box-shadow:none!important; }
 .form-card mat-card-header { padding:16px 16px 20px; align-items:center; }
-.form-avatar { display:grid; place-items:center; color:#26734d; background:#f2f7f4; }
 .form-card mat-card-title { font-size:16px!important; font-weight:600!important; }
 .form-card mat-card-subtitle { margin-top:4px; color:#666; }
 .form-card mat-card-content { padding:0 16px 16px!important; }
@@ -16,7 +15,6 @@ form { display:flex; flex-direction:column; gap:10px; }
 .selected-center strong,.weather-copy strong { font-size:12px; }
 .selected-center small,.weather-copy small { color:#666; font-size:11px; }
 .weather-panel { display:flex; align-items:center; gap:10px; padding:12px; border:1px solid #e5e5e5; }
-.weather-symbol { color:#666; }
 .weather-error { color:#a33; }
 .weather-error .weather-copy small { color:#a33; }
 .temperature { font-size:18px; color:#26734d; }

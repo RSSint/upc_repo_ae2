@@ -1,14 +1,14 @@
   <mat-toolbar class="topbar" role="banner">
   <button mat-icon-button class="menu-toggle" type="button" (click)="sidenavOpen.set(!sidenavOpen())"
-    [attr.aria-label]="'navigation.toggle-menu' | translate" aria-controls="primary-navigation">
+    aria-label="Toggle navigation menu" aria-controls="primary-navigation">
     <mat-icon>menu</mat-icon>
   </button>
-  <a class="brand" routerLink="/home" [attr.aria-label]="'navigation.home' | translate">
+  <a class="brand" routerLink="/home" aria-label="Home">
     <img src="assets/urbanfit-logo.svg" alt="" class="brand-logo">
-    <span>{{ 'app.title' | translate }}</span>
+    <span>UrbanFit Sports Center Management Platform</span>
   </a>
   <span class="toolbar-spacer"></span>
-  <div class="language-switch" role="group" [attr.aria-label]="'navigation.language' | translate">
+  <div class="language-switch" role="group" aria-label="Choose language">
     <button mat-button type="button" [class.selected]="currentLanguage() === 'en'"
       [attr.aria-pressed]="currentLanguage() === 'en'" (click)="setLanguage('en')">EN</button>
     <button mat-button type="button" [class.selected]="currentLanguage() === 'es'"
@@ -17,17 +17,16 @@
 </mat-toolbar>
 <mat-sidenav-container class="layout">
   <mat-sidenav #sidenav mode="side" [opened]="sidenavOpen()" id="primary-navigation"
-    [attr.aria-label]="'navigation.main' | translate" class="sidebar">
-    <div class="nav-label">{{ 'navigation.menu' | translate }}</div>
+    aria-label="Main navigation" class="sidebar">
+    <div class="nav-label">Workspace</div>
     <a mat-button routerLink="/home" routerLinkActive="active-link" (click)="closeOnSmallScreen()">
-      <mat-icon>dashboard</mat-icon><span>{{ 'navigation.home' | translate }}</span>
+      <span>Home</span>
     </a>
     <a mat-button routerLink="/reservations/new" routerLinkActive="active-link" (click)="closeOnSmallScreen()">
-      <mat-icon>add_circle</mat-icon><span>{{ 'navigation.new-reservation' | translate }}</span>
+      <span>New Reservation</span>
     </a>
     <div class="sidebar-note">
-      <mat-icon>bolt</mat-icon>
-      <span>{{ 'navigation.sidebar-note' | translate }}</span>
+      <span>Move better. Feel stronger. Stay on track.</span>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
