@@ -1,0 +1,9 @@
+<section class="not-found" aria-labelledby="not-found-title">
+  <div class="not-found-icon"><mat-icon>search_off</mat-icon></div>
+  <span class="eyebrow">404 · {{ 'not-found.eyebrow' | translate }}</span>
+  <h1 id="not-found-title">{{ 'not-found.title' | translate }}</h1>
+  <p>{{ 'not-found.description' | translate }} <code>{{ path }}</code></p>
+  <a mat-flat-button color="primary" routerLink="/home">
+    <mat-icon>arrow_back</mat-icon>{{ 'not-found.back-home' | translate }}
+  </a>
+</section>

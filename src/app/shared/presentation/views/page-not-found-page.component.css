@@ -1,0 +1,25 @@
+.not-found {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 24px;
+  text-align: center;
+}
+.not-found-icon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: #f2f7f4;
+  color: #26734d;
+}
+.not-found-icon mat-icon { width: 30px; height: 30px; font-size: 30px; }
+.eyebrow { color: #666; font-size: 11px; }
+.not-found h1 { margin: 12px 0; font-size: 30px; font-weight: 600; }
+.not-found p { max-width: 440px; margin: 0 0 20px; color: #666; line-height: 1.6; }
+.not-found code { overflow-wrap: anywhere; color: #26734d; }
+.not-found a { min-height: 40px; }

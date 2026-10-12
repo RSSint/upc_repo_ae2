@@ -1,0 +1,36 @@
+  <mat-toolbar class="topbar" role="banner">
+  <button mat-icon-button class="menu-toggle" type="button" (click)="sidenavOpen.set(!sidenavOpen())"
+    [attr.aria-label]="'navigation.toggle-menu' | translate" aria-controls="primary-navigation">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a class="brand" routerLink="/home" [attr.aria-label]="'navigation.home' | translate">
+    <img src="assets/urbanfit-logo.svg" alt="" class="brand-logo">
+    <span>{{ 'app.title' | translate }}</span>
+  </a>
+  <span class="toolbar-spacer"></span>
+  <div class="language-switch" role="group" [attr.aria-label]="'navigation.language' | translate">
+    <button mat-button type="button" [class.selected]="currentLanguage() === 'en'"
+      [attr.aria-pressed]="currentLanguage() === 'en'" (click)="setLanguage('en')">EN</button>
+    <button mat-button type="button" [class.selected]="currentLanguage() === 'es'"
+      [attr.aria-pressed]="currentLanguage() === 'es'" (click)="setLanguage('es')">ES</button>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container class="layout">
+  <mat-sidenav #sidenav mode="side" [opened]="sidenavOpen()" id="primary-navigation"
+    [attr.aria-label]="'navigation.main' | translate" class="sidebar">
+    <div class="nav-label">{{ 'navigation.menu' | translate }}</div>
+    <a mat-button routerLink="/home" routerLinkActive="active-link" (click)="closeOnSmallScreen()">
+      <mat-icon>dashboard</mat-icon><span>{{ 'navigation.home' | translate }}</span>
+    </a>
+    <a mat-button routerLink="/reservations/new" routerLinkActive="active-link" (click)="closeOnSmallScreen()">
+      <mat-icon>add_circle</mat-icon><span>{{ 'navigation.new-reservation' | translate }}</span>
+    </a>
+    <div class="sidebar-note">
+      <mat-icon>bolt</mat-icon>
+      <span>{{ 'navigation.sidebar-note' | translate }}</span>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <main class="page-content"><router-outlet /></main>
+  </mat-sidenav-content>
+</mat-sidenav-container>

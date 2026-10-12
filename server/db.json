@@ -1,0 +1,74 @@
+{
+  "sports-centers": [
+    {
+      "id": 1,
+      "name": "UrbanFit Miraflores",
+      "activityType": "fitness",
+      "capacity": 35,
+      "latitude": -12.1211,
+      "longitude": -77.0297
+    },
+    {
+      "id": 2,
+      "name": "UrbanFit San Isidro",
+      "activityType": "yoga",
+      "capacity": 40,
+      "latitude": -12.0977,
+      "longitude": -77.0365
+    },
+    {
+      "id": 3,
+      "name": "UrbanFit Surco",
+      "activityType": "swimming",
+      "capacity": 30,
+      "latitude": -12.145,
+      "longitude": -76.991
+    },
+    {
+      "id": 4,
+      "name": "UrbanFit Barranco",
+      "activityType": "cycling",
+      "capacity": 25,
+      "latitude": -12.1491,
+      "longitude": -77.0217
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "sportsCenterId": 1,
+      "activityType": "fitness",
+      "participantName": "Ana Torres",
+      "participants": 8,
+      "weatherTemperature": 20.1,
+      "reservedAt": "2026-10-10T09:00:00-05:00"
+    },
+    {
+      "id": 2,
+      "sportsCenterId": 1,
+      "activityType": "fitness",
+      "participantName": "Luis Ramos",
+      "participants": 12,
+      "weatherTemperature": 20.4,
+      "reservedAt": "2026-10-10T10:00:00-05:00"
+    },
+    {
+      "id": 3,
+      "sportsCenterId": 2,
+      "activityType": "yoga",
+      "participantName": "Maria Soto",
+      "participants": 15,
+      "weatherTemperature": 19.8,
+      "reservedAt": "2026-10-10T11:00:00-05:00"
+    },
+    {
+      "id": 4,
+      "sportsCenterId": 3,
+      "activityType": "swimming",
+      "participantName": "Jose Vega",
+      "participants": 30,
+      "weatherTemperature": 21.2,
+      "reservedAt": "2026-10-10T12:00:00-05:00"
+    }
+  ]
+}

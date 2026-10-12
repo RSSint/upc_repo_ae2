@@ -1,0 +1,77 @@
+{
+  "app": {
+    "title": "UrbanFit Sports Center Management Platform"
+  },
+  "navigation": {
+    "toggle-menu": "Toggle navigation menu",
+    "language": "Choose language",
+    "main": "Main navigation",
+    "menu": "Workspace",
+    "home": "Home",
+    "new-reservation": "New Reservation",
+    "sidebar-note": "Move better. Feel stronger. Stay on track."
+  },
+  "home": {
+    "eyebrow": "Your fitness overview",
+    "title": "Home",
+    "description": "Smart Reservations and Capacity Management for Sports Centers.",
+    "my-centers": "My Sports Centers",
+    "centers-description": "A real-time look at reservations and available capacity.",
+    "centers": "centers",
+    "empty": "Empty",
+    "people": "people",
+    "total-participants": "Total Participants",
+    "available-capacity": "Available Capacity",
+    "loading": "Loading sports centers...",
+    "load-error": "We couldn't load sports center data. Check that the API is running.",
+    "no-centers": "No sports centers are available.",
+    "new-reservation": "New Reservation"
+  },
+  "activity": {
+    "fitness": "Fitness",
+    "yoga": "Yoga",
+    "swimming": "Swimming",
+    "cycling": "Cycling"
+  },
+  "reservation": {
+    "eyebrow": "Build your community",
+    "title": "New Reservation",
+    "subtitle": "Register Participants at Your Sports Center",
+    "form-title": "Reservation details",
+    "form-description": "Choose an activity and tell us who is joining.",
+    "activity": "Activity type",
+    "center-capacity": "maximum participants",
+    "weather": "Current local temperature",
+    "weather-loading": "Getting the latest conditions...",
+    "weather-pending": "Select an activity to check the local weather.",
+    "current-temperature": "Live weather from Open-Meteo",
+    "weather-error": "The current temperature could not be loaded. Try selecting the activity again.",
+    "weather-required": "A valid weather reading is required before this reservation can be created.",
+    "center-not-found": "No sports center is configured for this activity.",
+    "participant-name": "Participant name",
+    "participants": "Number of participants",
+    "saving": "Saving reservation...",
+    "capacity-note": "Reservations count toward total center capacity, regardless of date or time.",
+    "capacity-exceeded": "The requested group no longer fits. Available capacity was checked again; update the participant count.",
+    "create-error": "The reservation could not be saved. Check your connection and try again."
+  },
+  "validation": {
+    "activity-required": "Choose an activity type.",
+    "name-required": "Enter the participant name.",
+    "name-whitespace": "The name cannot contain only spaces.",
+    "participants-required": "Enter the number of participants.",
+    "participants-min": "Enter a whole number greater than zero.",
+    "participants-max": "This group exceeds the available capacity."
+  },
+  "common": {
+    "create": "Create",
+    "cancel": "Cancel",
+    "retry": "Retry"
+  },
+  "not-found": {
+    "eyebrow": "Page not found",
+    "title": "This page isn't on the map.",
+    "description": "We couldn't find the route",
+    "back-home": "Return to Home"
+  }
+}

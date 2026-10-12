@@ -1,0 +1,23 @@
+.center-card { height:100%; border:1px solid #e5e5e5; border-radius:4px; box-shadow:none!important; }
+.center-card mat-card-header { padding:16px; align-items:center; }
+.center-avatar { display:grid; place-items:center; background:#f2f7f4; color:#26734d; }
+.center-card mat-card-title { font-size:16px; font-weight:600; }
+.center-card mat-card-subtitle { margin-top:4px; color:#777; }
+.center-card mat-card-content { padding:0 16px!important; min-height:90px; }
+.reservation-list { list-style:none; padding:0; margin:0; }
+.reservation-list li { display:flex; align-items:center; gap:10px; padding:10px 0; border-bottom:1px solid #eee; }
+.reservation-list li:last-child { border:0; }
+.person-icon { display:grid; place-items:center; color:#777; }
+.person-icon mat-icon { font-size:18px; }
+.participant-name { flex:1; font-size:13px; }
+.participant-name small { display:block; color:#777; font-size:11px; margin-top:3px; }
+.attendee-count { font-size:13px; font-weight:600; }
+.attendee-count small { color:#777; font-size:10px; }
+.empty-state { min-height:90px; display:flex; align-items:center; justify-content:center; gap:8px; color:#777; }
+.capacity-footer { display:flex!important; gap:16px; padding:14px 16px; border-top:1px solid #eee; }
+.metric { flex:1; display:flex; flex-direction:column; gap:5px; }
+.metric span { font-size:11px; color:#666; }
+.metric strong { font-size:20px; }
+.metric.available { border-left:1px solid #eee; padding-left:16px; }
+.metric.available strong { color:#26734d; }
+.metric.available.at-capacity strong { color:#a33; }

@@ -2,11 +2,12 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "9cc4ddde-02e6-4358-9610-7514d8da1d88"
   },
   "newProjectRoot": "projects",
   "projects": {
-    "daos-renzo": {
+    "ea7737u202114790": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -56,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "daos-renzo:build:production"
+              "buildTarget": "ea7737u202114790:build:production"
             },
             "development": {
-              "buildTarget": "daos-renzo:build:development"
+              "buildTarget": "ea7737u202114790:build:development"
             }
           },
           "defaultConfiguration": "development"

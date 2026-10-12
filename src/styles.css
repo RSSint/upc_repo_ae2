@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+  color-scheme: light;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #242424;
+  background: #fff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --mat-sys-primary: #26734d;
+  --mat-sys-on-primary: #fff;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { font-family: Arial, Helvetica, sans-serif; }
+button, a, input { font: inherit; }
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-color: #26734d;
+  --mdc-filled-button-label-text-color: #fff;
+}
+.mat-mdc-outlined-button.mat-primary { --mdc-outlined-button-label-text-color: #26734d; }

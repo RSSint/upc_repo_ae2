@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="UrbanFit">
+  <rect width="64" height="64" rx="18" fill="#e6f4eb"/>
+  <path d="M15 34h8l5-13 9 25 5-12h7" fill="none" stroke="#147a43" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+  <circle cx="15" cy="34" r="3" fill="#147a43"/>
+  <circle cx="49" cy="34" r="3" fill="#147a43"/>
+</svg>

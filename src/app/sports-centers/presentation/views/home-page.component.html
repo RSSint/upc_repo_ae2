@@ -1,0 +1,37 @@
+<section class="page-heading">
+  <div>
+    <div class="eyebrow"><span class="live-dot"></span>{{ 'home.eyebrow' | translate }}</div>
+    <h1>{{ 'home.title' | translate }}</h1>
+    <p>{{ 'home.description' | translate }}</p>
+  </div>
+  <a mat-flat-button color="primary" routerLink="/reservations/new">
+    <mat-icon>add</mat-icon>{{ 'home.new-reservation' | translate }}
+  </a>
+</section>
+<section class="centers-section" aria-labelledby="centers-title">
+  <div class="section-heading">
+    <div>
+      <h2 id="centers-title">{{ 'home.my-centers' | translate }}</h2>
+      <p>{{ 'home.centers-description' | translate }}</p>
+    </div>
+    <span class="center-count">{{ store.centers().length }} {{ 'home.centers' | translate }}</span>
+  </div>
+  @if (store.loading()) {
+    <div class="status-message" role="status">
+      <mat-icon>sync</mat-icon>{{ 'home.loading' | translate }}
+    </div>
+  } @else if (store.loadError()) {
+    <div class="error-message" role="alert">
+      {{ store.loadError() | translate }}
+      <button mat-button type="button" (click)="store.refresh()">{{ 'common.retry' | translate }}</button>
+    </div>
+  } @else {
+    <div class="center-grid">
+      @for (summary of store.summaries(); track summary.center.id) {
+        <sports-center-card [summary]="summary" />
+      } @empty {
+        <p>{{ 'home.no-centers' | translate }}</p>
+      }
+    </div>
+  }
+</section>

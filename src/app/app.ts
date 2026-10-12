@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
+import { Component } from '@angular/core';
+import { AppShellComponent } from './shared/presentation/components/app-shell.component';
 @Component({
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [AppShellComponent],
   selector: 'app-root',
-  styleUrl: './app.css',
   templateUrl: './app.html',
 })
+
 export class App {
-  protected readonly title = signal('daos-renzo');
 }
